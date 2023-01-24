@@ -1,0 +1,221 @@
+@import 'default';
+@import 'fonts';
+@import 'colors';
+@import 'mixin';
+
+body {
+    background-color: $back;
+    color: $main;
+}
+
+.transition {
+    transition: 1s;
+}
+
+.btn {
+    background: linear-gradient(135deg, $purple 0%, $teal 44.76%, $orange 100%);
+    background-size: cover;
+    @include font(500, 19px);
+    padding: 18px 27px;
+    color: $main;
+    text-transform: uppercase;
+    border-radius: 2px;
+
+    &:hover {
+        mix-blend-mode: screen;
+        text-shadow: 0 0 5px $orange;
+        box-shadow: 0 0 10px 5px rgba($color: white, $alpha: 0.1);
+        cursor: pointer;
+    }
+}
+
+%container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    width: 50%;
+    margin: 0 auto 40px;
+
+    h2,
+    p {
+        text-align: center
+    }
+
+    h2 {
+        @include font(500, 56px);
+        margin-bottom: 25px;
+    }
+
+    .description {
+        @include font(400, 20px);
+    }
+}
+
+section {
+    margin-bottom: 128px;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    @extend %container;
+    padding: 22px 64px;
+
+    .logo {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    nav {
+        width: 35%;
+        @extend %container;
+
+        a {
+            color: $white;
+            text-transform: uppercase;
+            @include font(500, 15px);
+            transition: 0.5s;
+
+            &:hover {
+                border-bottom: 1px solid $purple;
+            }
+        }
+
+        .nav-services {
+            @extend %container;
+
+            svg {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .nav-button {
+        @extend %container;
+        position: relative;
+
+        .ellipse {
+            position: absolute;
+            top: -5;
+            left: 0;
+            z-index: -1;
+            width: 27px;
+            height: 100%;
+            border-radius: 100%;
+            background: linear-gradient(135deg, $purple 0%, $teal 44.76%, $orange 100%);
+            transition: 0.5s;
+            padding: 5px 0;
+        }
+
+        span {
+            padding: 0 30px;
+            @include font(500, 14px);
+            text-transform: uppercase;
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            .ellipse {
+                width: 100%;
+                border-radius: 2px;
+            }
+
+            mix-blend-mode: screen;
+            text-shadow: 0 0 5px $orange;
+            cursor: pointer;
+        }
+    }
+}
+
+.main {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 30px 0 270px;
+
+    h1 {
+        @include font(500, 74px);
+        text-transform: capitalize;
+        margin-bottom: 40px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    p {
+        @include font(400, 18px);
+        margin: 30px 0 40px;
+        text-align: center;
+    }
+}
+
+.about {
+    .table {
+        margin-top: 70px;
+
+        .row {
+            @extend %container;
+            align-items: stretch;
+            transition: 1s;
+
+            &:first-child {
+                border-bottom: 1px solid $teal;
+            }
+
+            .column {
+                position: relative;
+                width: 25%;
+                padding: 0 28px 28px;
+                padding-top: 12%;
+                background: linear-gradient(135deg, $purple 0%, $teal 44.76%, $orange 100%);
+                background-size: 0%;
+                background-repeat: no-repeat;
+                transition: 0.3s;
+                .column-content {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    h3 {
+                        @include font(500, 38px);
+                        text-align: center;
+                        margin-bottom: 15px;
+                    }
+                    p {
+                        width: 58%;
+                        margin: 0 auto;
+                        @include font(400, 19px);
+                        text-align: center;
+                    }
+                    
+                }
+                    &:nth-child(2),
+                    &:nth-child(4),
+                    &:nth-child(3) {
+                        border-left: 1px solid $teal;
+                    }
+                
+                &:hover {
+                    background-size: 100%;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

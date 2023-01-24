@@ -1,0 +1,233 @@
+p, h1, h2, h3, h4, h5, h6, body {
+  margin: 0;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+}
+
+input[type=text] {
+  outline: none;
+  background-color: transparent;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url(../fonts/Inter-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url(../fonts/Inter-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url(../fonts/Inter-Bold.ttf);
+  font-weight: 700;
+}
+body {
+  background-color: #141619;
+  color: #e5e5e5;
+}
+
+.transition {
+  transition: 1s;
+}
+
+.btn {
+  background: linear-gradient(135deg, #665dcd 0%, #5fa4e6 44.76%, #d2ab67 100%);
+  background-size: cover;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 19px;
+  padding: 18px 27px;
+  color: #e5e5e5;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+.btn:hover {
+  mix-blend-mode: screen;
+  text-shadow: 0 0 5px #d2ab67;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.about .table .row, header .nav-button, header nav .nav-services, header nav, header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  width: 50%;
+  margin: 0 auto 40px;
+}
+.title h2,
+.title p {
+  text-align: center;
+}
+.title h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 56px;
+  margin-bottom: 25px;
+}
+.title .description {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+section {
+  margin-bottom: 128px;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  padding: 22px 64px;
+}
+header .logo:hover {
+  cursor: pointer;
+}
+header nav {
+  width: 35%;
+}
+header nav a {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  transition: 0.5s;
+}
+header nav a:hover {
+  border-bottom: 1px solid #665dcd;
+}
+header nav .nav-services svg {
+  margin-left: 10px;
+}
+header .nav-button {
+  position: relative;
+}
+header .nav-button .ellipse {
+  position: absolute;
+  top: -5;
+  left: 0;
+  z-index: -1;
+  width: 27px;
+  height: 100%;
+  border-radius: 100%;
+  background: linear-gradient(135deg, #665dcd 0%, #5fa4e6 44.76%, #d2ab67 100%);
+  transition: 0.5s;
+  padding: 5px 0;
+}
+header .nav-button span {
+  padding: 0 30px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+header .nav-button:hover {
+  cursor: pointer;
+  mix-blend-mode: screen;
+  text-shadow: 0 0 5px #d2ab67;
+  cursor: pointer;
+}
+header .nav-button:hover .ellipse {
+  width: 100%;
+  border-radius: 2px;
+}
+
+.main {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 30px 0 270px;
+}
+.main h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 74px;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+}
+.main h1:last-of-type {
+  margin-bottom: 0;
+}
+.main p {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 30px 0 40px;
+  text-align: center;
+}
+
+.about .table {
+  margin-top: 70px;
+}
+.about .table .row {
+  align-items: stretch;
+  transition: 1s;
+}
+.about .table .row:first-child {
+  border-bottom: 1px solid #5fa4e6;
+}
+.about .table .row .column {
+  position: relative;
+  width: 25%;
+  padding: 0 28px 28px;
+  padding-top: 12%;
+  background: linear-gradient(135deg, #665dcd 0%, #5fa4e6 44.76%, #d2ab67 100%);
+  background-size: 0%;
+  background-repeat: no-repeat;
+  transition: 0.3s;
+}
+.about .table .row .column .column-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.about .table .row .column .column-content h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.about .table .row .column .column-content p {
+  width: 58%;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  text-align: center;
+}
+.about .table .row .column:nth-child(2), .about .table .row .column:nth-child(4), .about .table .row .column:nth-child(3) {
+  border-left: 1px solid #5fa4e6;
+}
+.about .table .row .column:hover {
+  background-size: 100%;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */
