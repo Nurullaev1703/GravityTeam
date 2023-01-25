@@ -35,6 +35,30 @@ body {
     align-items: center;
 }
 
+.container {
+    @extend %container;
+}
+
+.button-container {
+    @extend %container;
+    justify-content: flex-start;
+    margin-top: 20px;
+
+    a {
+        @include font(400, 18px);
+        color: $white;
+        transition: 0.4s;
+        margin-right: 10px;
+        border-bottom: 1px solid transparent;
+        padding: 0 2px;
+
+        &:hover {
+            border-bottom: 1px solid $teal;
+            text-shadow: 0 0 5px $orange;
+        }
+    }
+}
+
 .title {
     width: 50%;
     margin: 0 auto 40px;
@@ -59,7 +83,7 @@ section {
 }
 
 .wrapper {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
 }
 
@@ -136,7 +160,7 @@ header {
 }
 
 .main {
-    width: 35%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -181,7 +205,8 @@ header {
                 background: linear-gradient(135deg, $purple 0%, $teal 44.76%, $orange 100%);
                 background-size: 0%;
                 background-repeat: no-repeat;
-                transition: 0.3s;
+                transition: 0.4s;
+
                 .column-content {
                     position: absolute;
                     top: 0;
@@ -192,28 +217,182 @@ header {
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
+
                     h3 {
                         @include font(500, 38px);
                         text-align: center;
                         margin-bottom: 15px;
                     }
+
                     p {
                         width: 58%;
                         margin: 0 auto;
                         @include font(400, 19px);
                         text-align: center;
                     }
-                    
+
                 }
-                    &:nth-child(2),
-                    &:nth-child(4),
-                    &:nth-child(3) {
-                        border-left: 1px solid $teal;
-                    }
-                
+
+                &:nth-child(2),
+                &:nth-child(4),
+                &:nth-child(3) {
+                    border-left: 1px solid $teal;
+                }
+
                 &:hover {
+                    text-shadow: 0 0 5px $orange;
                     background-size: 100%;
                     cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.market {
+    .title {
+        margin-bottom: 128px;
+    }
+
+    .container {
+        @extend %container;
+
+        &:last-child {
+            flex-direction: row-reverse
+        }
+
+        .cover {
+            @include cover(40%);
+
+        }
+
+        .market-description,
+        .cover {
+            width: 46%;
+        }
+
+        .market-description {
+            .sub-title {
+                @include font(400, 36px);
+            }
+
+            .info {
+                @include font(700, 20px);
+                margin: 28px 0 20px 0;
+            }
+
+            .description {
+                @include font(400, 20px);
+            }
+        }
+    }
+
+    &-content {
+        position: relative;
+
+        .circle {
+            position: absolute;
+            top: 10%;
+            left: -20%;
+            width: 50%;
+            height: 100%;
+            z-index: -1;
+            border-radius: 100%;
+            background: linear-gradient(210deg, $purple 20%, $teal 60%, $orange 100%);
+            filter: blur(150px) saturate(150%) opacity(0.8);
+            transform: rotate(15deg);
+        }
+    }
+}
+
+.partners {
+    .container {
+        .scroller,
+        .sub-title {
+            width: 35%;
+        }
+
+        .sub-title {
+            @include font(500, 60px);
+        }
+        .scroller {
+            position: relative;
+            @extend %container;
+            .hide{
+                position: absolute;
+                z-index: 2;
+                width: 100%;
+                height: 20%;
+                &:first-child{
+                    top: -5%;
+                    left: 0;
+                    background: linear-gradient(0deg, rgba(20, 22, 25, 0) 0%, rgba(20, 22, 25, 0.88) 52.68%, #141619 100%);
+                }
+                &:last-child{
+                    left: 0;
+                    bottom: -5%;
+                    background: linear-gradient(180deg, rgba(20, 22, 25, 0) 0%, rgba(20, 22, 25, 0.88) 52.68%, #141619 100%);
+                }
+            }
+            .blocks {
+                width: 48%;
+                position: relative;
+                overflow-y: scroll;
+                padding-top: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+                
+                .blocks-scrolling {
+                    position: absolute;
+                    top: 0%;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    &#second{
+                        top:-20%
+                    }
+                    .card {
+                        position: relative;
+                        width: 80%;
+                        padding-top: 80%;
+                        background: linear-gradient(180deg, rgba(65, 85, 114, 0.15) 0%, rgba(27, 27, 30, 0.1) 100%);
+                        border: 1px solid rgba(65, 85, 114, 0.5);
+                        border-radius: 4px;
+                        margin-bottom: 30px;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        .card-content {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+
+                            .cover {
+                                @include cover(50%);
+                                width: 50%;
+                            }
+
+                            p {
+                                @include font(400, 11px);
+                                color: $gray;
+                                text-transform: uppercase;
+                                margin-top: 16px;
+                            }
+                        }
+                    }
                 }
             }
         }
